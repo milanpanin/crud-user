@@ -12,18 +12,24 @@ const Navigation = (props) => {
     const hideModal = () => setModal(false);
 
     const handlerAddUser = () => {
-        let newUserObj = {
-            id: Math.random(),
-            gender: gender,
-            username: name,
-            email: email,
+        if(name && email && gender){
+            let newUserObj = {
+                id: Math.random(),
+                gender: gender,
+                username: name,
+                email: email,
+            }
+    
+            props.addUser(newUserObj);
+            hideModal();
+            setName("");
+            setEmail("");
+            setGender("");
         }
-
-        props.addUser(newUserObj);
-        hideModal();
-        setName("");
-        setEmail("");
-        setGender("");
+        else{
+            alert("Popunite sva polja!");
+        }
+        
     }
 
     return (
@@ -34,9 +40,8 @@ const Navigation = (props) => {
             <Modal show={modal} handleClose={hideModal}>
                 <p className="modal-header">Dodaj novog korisnika</p>
                 <form className="modal-form">
-                    <input type="text" className="modal-form-input-name" value={name} onChange={e => setName(e.target.value)} placeholder="Unesite ime korisnika"/>
-                    <input type="email" className="modal-form-input-email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Unesite E-mail korisnika" />
-
+                    <input type="text" maxLength="12" className="modal-form-input-name" value={name} onChange={e => setName(e.target.value)} placeholder="Unesite ime korisnika" required/>
+                    <input type="email" maxLength="25" className="modal-form-input-email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Unesite E-mail korisnika" required/>
                     <label className="modal-form-label">Odaberite pol korisnika</label>
                     <div className="modal-form-radio" onChange={e => setGender(e.target.value)}>
                         <input type="radio" name="pol" value="m" />
