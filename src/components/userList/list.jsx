@@ -17,7 +17,10 @@ const List = (props) => {
         }
     }
 
-    useEffect(() => { setUsers(props.user) }, [props.user]);
+    useEffect(() => { 
+        setUsers(props.user); 
+        setFilteredUsers(props.user); 
+    }, [props.user]);
 
     return ( 
         <section className="list">
