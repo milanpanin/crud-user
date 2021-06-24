@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  color: #333;
+  font-family: 'Nunito', sans-serif;
+}
+
+.app{
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 990px) {
+  .app{
+    margin: 0 15px;
+  }
+}
