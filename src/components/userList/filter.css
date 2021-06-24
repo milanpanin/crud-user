@@ -1,0 +1,8 @@
+.filter{
+    display: inline;
+    float: right;
+}
+
+select{
+    outline: none;
+}
