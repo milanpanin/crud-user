@@ -45,7 +45,7 @@ const Navigation = (props) => {
                     <div className="modal-form-radio" onChange={e => setGender(e.target.value)}>
                         <input type="radio" name="pol" value="m" />
                         <label>Muško</label>
-                        <input type="radio" name="pol" value="z" />
+                        <input type="radio" name="pol" value="f" />
                         <label>Žensko</label>
                     </div>
                 </form>
