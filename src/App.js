@@ -47,12 +47,17 @@ function App() {
   const addUser = (newUser) => {
     let newUserList = [...user, newUser];
     setUser(newUserList);
-  } 
+  }
+
+  const editUser = (editedUser) => {
+    let updated = user.map(usr => usr.id !== editedUser.id ? usr : editedUser);
+    setUser(updated);
+  }
 
   return (
     <div className="app">
       <Navigation user={user} addUser={addUser}/>
-      <List user={user} deleteUser={deleteUser}/>
+      <List user={user} deleteUser={deleteUser} editUser={editUser}/>
     </div>
   );
 }

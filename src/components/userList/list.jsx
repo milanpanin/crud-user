@@ -27,7 +27,7 @@ const List = (props) => {
             <h3>Lista svih korisnika</h3>
             <Filter filterUsers={filterUsers}/>
             {filteredUsers.map(item => 
-                <Item key={item.id} user={item} deleteUser={props.deleteUser}/>
+                <Item key={item.id} user={item} deleteUser={props.deleteUser} editUser={props.editUser}/>
             )}
         </section>
     );

@@ -29,7 +29,6 @@ const Navigation = (props) => {
         else{
             alert("Popunite sva polja!");
         }
-        
     }
 
     return (
