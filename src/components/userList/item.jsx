@@ -36,7 +36,7 @@ const Item = (props) => {
                 <div>
                     <input type="radio" name="pol" value="m" defaultChecked/>
                     <label>Muško</label>
-                    <input type="radio" name="pol" value="z" />
+                    <input type="radio" name="pol" value="f" />
                     <label>Žensko</label>
                 </div>
             );
@@ -46,7 +46,7 @@ const Item = (props) => {
                 <div>
                     <input type="radio" name="pol" value="m"/>
                     <label>Muško</label>
-                    <input type="radio" name="pol" value="z" defaultChecked/>
+                    <input type="radio" name="pol" value="f" defaultChecked/>
                     <label>Žensko</label>
                 </div>
             );

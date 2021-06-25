@@ -4,31 +4,28 @@ import Item from "./item";
 import "./list.css";
 
 const List = (props) => {
-    const [users, setUsers] = useState(props.user);
-    const [filteredUsers, setFilteredUsers] = useState(props.user);
+    const [gender, setGender] = useState("all");
 
-    const filterUsers = (filterValue) => {
-        if(filterValue === "all"){
-            setFilteredUsers(users);
-        }
+    const filterUsers = () => {
+        if(gender === "all"){
+            return props.user.map(item =>
+                <Item key={item.id} user={item} deleteUser={props.deleteUser} editUser={props.editUser}/>
+        )}
         else{
-            let newFilteredUsers = users.filter(user => user.gender === filterValue);
-            setFilteredUsers(newFilteredUsers);
-        }
+            return props.user.filter(user => user.gender === gender).map(item =>
+                <Item key={item.id} user={item} deleteUser={props.deleteUser} editUser={props.editUser}/>
+        )}
     }
 
-    useEffect(() => { 
-        setUsers(props.user); 
-        setFilteredUsers(props.user); 
-    }, [props.user]);
-
+    const updateFilter = (filterStatus) => {
+        setGender(filterStatus);
+    }
+    
     return ( 
         <section className="list">
             <h3>Lista svih korisnika</h3>
-            <Filter filterUsers={filterUsers}/>
-            {filteredUsers.map(item => 
-                <Item key={item.id} user={item} deleteUser={props.deleteUser} editUser={props.editUser}/>
-            )}
+            <Filter gender={gender} updateFilter={updateFilter}/>
+            {filterUsers()}
         </section>
     );
 }
