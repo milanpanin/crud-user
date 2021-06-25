@@ -42,7 +42,6 @@ function App() {
   const deleteUser = (id) => {
     let newData = user.filter(user => user.id !== id);
     setUser(newData);
-    console.log(id);
   }
 
   const addUser = (newUser) => {
@@ -53,7 +52,6 @@ function App() {
   const editUser = (editedUser) => {
     let updated = user.map(usr => usr.id !== editedUser.id ? usr : editedUser);
     setUser(updated);
-    console.log(updated);
   }
 
   return (

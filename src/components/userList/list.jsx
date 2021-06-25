@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Filter from "./filter";
 import Item from "./item";
 import "./list.css";
