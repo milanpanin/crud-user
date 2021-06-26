@@ -20,12 +20,25 @@ const List = (props) => {
     const updateFilter = (filterStatus) => {
         setGender(filterStatus);
     }
+
+    const headerMsg = () => {
+        if(gender === "all"){
+            return <h3>Lista svih korisnika</h3>
+        }
+        else if(gender === "m"){
+            return <h3>Lista svih korisnika muškog pola</h3>
+        }
+        else{
+            return <h3>Lista svih korisnika ženskog pola</h3>
+        }
+    }
     
     return ( 
         <section className="list">
-            <h3>Lista svih korisnika</h3>
+            {headerMsg()}
             <Filter gender={gender} updateFilter={updateFilter}/>
             {filterUsers()}
+            {filterUsers().length === 0 && <p className="emptyListMsg">Lista je prazna! Unesite novog korisnika ili učitajte ponovo stranicu.</p> }
         </section>
     );
 }

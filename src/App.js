@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import Navigation from './components/navigation/navigation';
 import List from './components/userList/list';
 import './App.css';
-import { useState } from 'react';
+
 
 let dummyData = [
   {

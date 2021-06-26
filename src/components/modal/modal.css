@@ -62,5 +62,15 @@
     .modal-main {
         width: 96%;
     }
+
+    .modal-addBtn, .modal-cancelBtn{
+        padding: 5px 0;
+        width: 120px;
+        margin: 0 10px;
+    }
+
+    .modal-form input[type=text], .modal-form input[type=email] {
+        width: 90%;
+    }
 }
 
